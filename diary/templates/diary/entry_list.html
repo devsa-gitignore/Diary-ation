@@ -1,0 +1,15 @@
+{% extends "diary/base.html" %}
+{% block title %}All Entries{% endblock %}
+{% block content %}
+<h2>All Diary Entries</h2>
+<ul class="diarylist">
+    {%for entry in list%}
+        <li>
+            <a href="{%url 'diary:entrydetail' entry.pk}">{{entry.title}}</a>
+            <small>{{entry.created_at|date:"M d, Y"</small>
+        </li>
+    {%empty%}
+        <li>No entries yet.</li>
+    {%endfor%}
+</ul>
+{%endblock%}

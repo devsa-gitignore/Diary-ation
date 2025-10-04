@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{%block title%}Diary{%endblock%}</title>
+        <link rel="stylesheet" href="{%static 'diary/css/style.css%'}">
+    </head>
+    <body>
+        <nav class="navigation">
+            <a href="{%url 'diary:entrylist'%}">Home</a>
+            <a href="{%url 'diary:entrycreate%'}">New Entry</a>
+        </nav>
+        <main class="container">
+            {%block content%}{%endblock%}
+        </main>
+    </body>
+</html>
